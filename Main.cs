@@ -97,7 +97,7 @@ namespace MODRP_BizBill.Main
             {
                 EditLineInConfig(player, "CityHallId");
             });
-            panel.AddTabLine($"{TextFormattingHelper.Color("BankId : ", TextFormattingHelper.Colors.Info)}" + $"{TextFormattingHelper.Color($"{_BizBillConfig.CityHallId}", TextFormattingHelper.Colors.Verbose)}", _ =>
+            panel.AddTabLine($"{TextFormattingHelper.Color("BankId : ", TextFormattingHelper.Colors.Info)}" + $"{TextFormattingHelper.Color($"{_BizBillConfig.BankId}", TextFormattingHelper.Colors.Verbose)}", _ =>
             {
                 EditLineInConfig(player, "BankId");
             });
@@ -105,7 +105,7 @@ namespace MODRP_BizBill.Main
             {
                 EditLineInConfig(player, "TaxPercentage");
             });
-            panel.AddTabLine($"{TextFormattingHelper.Color("BankPercentage : ", TextFormattingHelper.Colors.Info)}" + $"{TextFormattingHelper.Color($"{_BizBillConfig.TaxPercentage}", TextFormattingHelper.Colors.Verbose)}", _ =>
+            panel.AddTabLine($"{TextFormattingHelper.Color("BankPercentage : ", TextFormattingHelper.Colors.Info)}" + $"{TextFormattingHelper.Color($"{_BizBillConfig.BankPercentage}", TextFormattingHelper.Colors.Verbose)}", _ =>
             {
                 EditLineInConfig(player, "BankPercentage");
             });
@@ -193,13 +193,17 @@ namespace MODRP_BizBill.Main
                 ConfigEditor(player);
             });
 
-            _menu.AddBizTabLine(PluginInformations, new List<Activity.Type> { Activity.Type.Bus }, null, "Faire une facture", (ui) =>
+            _menu.AddBizTabLine(PluginInformations, new List<Activity.Type> { Activity.Type.None }, null, "Faire une facture", (ui) =>
             {
                 Player player = PanelHelper.ReturnPlayerFromPanel(ui);
-                BillPanel.MainPanel(player);
+                BillPanel.BizBillPanel(player);
+            });
+            _menu.AddBizTabLine(PluginInformations, new List<Activity.Type> { Activity.Type.None }, null, "Comptabilité", (ui) =>
+            {
+                Player player = PanelHelper.ReturnPlayerFromPanel(ui);
+                BillPanel.ComptaPanel(player);
             });
 
-           
         }
     }
 }

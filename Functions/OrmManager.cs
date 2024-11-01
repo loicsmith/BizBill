@@ -12,6 +12,7 @@ namespace MODRP_BizBill.Functions
 
             public string CustomerName { get; set; }
             public string EmployeeName { get; set; }
+
             public float Price { get; set; }
             public int Date { get; set; }
         }
