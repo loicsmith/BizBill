@@ -60,7 +60,7 @@ namespace MODRP_BizBill.Functions
 
             panel.AddButton("Signer", (ui) =>
             {
-                if (SecondPlayer.character.Bank <= Price)
+                if (SecondPlayer.character.Bank >= Price)
                 {
                     SecondPlayer.ClosePanel(ui);
                     BizPanel_AcceptBill(player, player.GetClosestPlayer(), Price);
