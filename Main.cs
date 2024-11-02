@@ -2,7 +2,6 @@
 using Life.BizSystem;
 using Life.Network;
 using Life.UI;
-using Mirror;
 using ModKit.Helper;
 using ModKit.Interfaces;
 using ModKit.Internal;
@@ -11,7 +10,6 @@ using MODRP_BizBill.Classes;
 using MODRP_BizBill.Functions;
 using Newtonsoft.Json;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using _menu = AAMenu.Menu;

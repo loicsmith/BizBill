@@ -87,7 +87,7 @@ namespace MODRP_BizBill.Functions
 
         public async void BizPanel_AcceptBill(Player player, Player SecondPlayer, float Price)
         {
-            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { CustomerName = SecondPlayer.GetFullName(), EmployeeName = player.GetFullName(), Date = 0, Price = Price };
+            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { CustomerName = SecondPlayer.GetFullName(), EmployeeName = player.GetFullName(), Date = DateUtils.GetCurrentTime(), Price = Price };
             var result = await instance.Save();
 
             if (result)
@@ -145,7 +145,7 @@ namespace MODRP_BizBill.Functions
 
                 foreach (OrmManager.BizBill_LogsBill ComptaData in data)
                 {
-                    panel.AddTabLine($"De {ComptaData.EmployeeName} à {ComptaData.CustomerName}", $"Montant : {ComptaData.Price}€", ItemUtils.GetIconIdByItemId(1112), _ => { });
+                    panel.AddTabLine($"{TextFormattingHelper.Size($"De {ComptaData.EmployeeName} à {ComptaData.CustomerName}", 15)}\n{TextFormattingHelper.Color(TextFormattingHelper.Size(TextFormattingHelper.LineHeight($"Le {DateUtils.FormatUnixTimestamp(ComptaData.Date)}", 15), 15), TextFormattingHelper.Colors.Purple)}", $"Montant : {ComptaData.Price}€", ItemUtils.GetIconIdByItemId(1112), _ => { });
                 }
 
                 panel.AddButton("Retour", ui => AAMenu.AAMenu.menu.BizPanel(player));
