@@ -10,6 +10,7 @@ namespace MODRP_BizBill.Functions
         {
             [AutoIncrement][PrimaryKey] public int Id { get; set; }
 
+            public int BizId { get; set; }
             public string CustomerName { get; set; }
             public string EmployeeName { get; set; }
 
