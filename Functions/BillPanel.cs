@@ -87,7 +87,7 @@ namespace MODRP_BizBill.Functions
 
         public async void BizPanel_AcceptBill(Player player, Player SecondPlayer, float Price)
         {
-            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { BizId = player.character.BizId, CustomerName = SecondPlayer.GetFullName(), EmployeeName = player.GetFullName(), Date = DateUtils.GetCurrentTime(), Price = Price };
+            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { BizId = player.biz.Id, CustomerName = SecondPlayer.GetFullName(), EmployeeName = player.GetFullName(), Date = DateUtils.GetCurrentTime(), Price = Price };
             var result = await instance.Save();
 
             if (result)
@@ -141,7 +141,7 @@ namespace MODRP_BizBill.Functions
             {
                 Panel panel = Context.PanelHelper.Create($"Comptabilité de {player.biz.BizName}", UIPanel.PanelType.TabPrice, player, () => ComptaPanel(player));
 
-                var data = await OrmManager.BizBill_LogsBill.Query(Data => Data.BizId == player.character.BizId);
+                var data = await OrmManager.BizBill_LogsBill.Query(Data => Data.BizId == player.biz.Id);
 
                 foreach (OrmManager.BizBill_LogsBill ComptaData in data)
                 {
