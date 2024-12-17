@@ -58,7 +58,7 @@ namespace MODRP_BizBill.Functions
             panel.TextLines.Add("Facture adressée à : " + SecondPlayer.GetFullName());
             panel.TextLines.Add($"Montant de : {Price}€");
 
-            panel.AddButton("Signer", (ui) =>
+            panel.AddButton("<color=green>Signer</color>", (ui) =>
             {
                 if (SecondPlayer.character.Bank >= Price)
                 {
@@ -74,7 +74,7 @@ namespace MODRP_BizBill.Functions
                 }
             });
 
-            panel.AddButton("Déchirer", (ui) =>
+            panel.AddButton("<color=red>Déchirer</color>", (ui) =>
             {
                 SecondPlayer.ClosePanel(ui);
                 BizPanel_RefuseBill(player, player.GetClosestPlayer(), Price);
