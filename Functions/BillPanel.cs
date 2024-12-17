@@ -5,7 +5,7 @@ using ModKit.Helper;
 using ModKit.Utils;
 using System;
 
-namespace MODRP_BizBill.Functions
+namespace BizBill.Functions
 {
     internal class BillPanel
     {

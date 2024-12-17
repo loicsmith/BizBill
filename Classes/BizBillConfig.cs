@@ -1,4 +1,4 @@
-﻿namespace MODRP_BizBill.Classes
+﻿namespace BizBill.Classes
 {
     public class BizBillConfig
     {

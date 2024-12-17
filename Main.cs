@@ -6,15 +6,15 @@ using ModKit.Helper;
 using ModKit.Interfaces;
 using ModKit.Internal;
 using ModKit.ORM;
-using MODRP_BizBill.Classes;
-using MODRP_BizBill.Functions;
+using BizBill.Classes;
+using BizBill.Functions;
 using Newtonsoft.Json;
 using SQLite;
 using System.Collections.Generic;
 using System.IO;
 using _menu = AAMenu.Menu;
 
-namespace MODRP_BizBill.Main
+namespace BizBill.Main
 {
 
     class Main : ModKit.ModKit

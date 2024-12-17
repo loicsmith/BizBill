@@ -1,7 +1,7 @@
 ﻿using ModKit.ORM;
 using SQLite;
 
-namespace MODRP_BizBill.Functions
+namespace BizBill.Functions
 {
     internal class OrmManager
     {
