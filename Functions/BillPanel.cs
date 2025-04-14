@@ -16,7 +16,7 @@ namespace BizBill.Functions
             if (player.GetClosestPlayer() != null)
             {
                 Panel panel = Context.PanelHelper.Create("Facture", UIPanel.PanelType.Input, player, () => BizBillPanel(player));
-                panel.TextLines.Add("Facture adressée à : " + player.GetClosestPlayer().GetFullName());
+                panel.TextLines.Add("Facture adressée à : " + player.GetClosestPlayer().FullName);
                 panel.TextLines.Add("Veuillez saisir le montant de la facture.");
                 panel.SetInputPlaceholder("Montant en €..");
 
@@ -28,7 +28,7 @@ namespace BizBill.Functions
                     {
                         if (Price > 0)
                         {
-                            player.Notify("Succès", $"La facture d'un montant de {Price}€ vient d'être envoyé à {player.GetClosestPlayer().GetFullName()}", NotificationManager.Type.Success);
+                            player.Notify("Succès", $"La facture d'un montant de {Price}€ vient d'être envoyé à {player.GetClosestPlayer().FullName}", NotificationManager.Type.Success);
                             BizBill_ReceiveBill(player, player.GetClosestPlayer(), Price);
                             player.ClosePanel(ui);
                         } else
@@ -55,7 +55,7 @@ namespace BizBill.Functions
         public void BizBill_ReceiveBill(Player player, Player SecondPlayer, float Price)
         {
             Panel panel = Context.PanelHelper.Create("Facture", UIPanel.PanelType.Text, SecondPlayer, () => BizBill_ReceiveBill(player, SecondPlayer, Price));
-            panel.TextLines.Add("Facture adressée à : " + SecondPlayer.GetFullName());
+            panel.TextLines.Add("Facture adressée à : " + SecondPlayer.FullName);
             panel.TextLines.Add($"Montant de : {Price}€");
 
             panel.AddButton("<color=green>Signer</color>", (ui) =>
@@ -68,7 +68,7 @@ namespace BizBill.Functions
                 else
                 {
                     SecondPlayer.ClosePanel(ui);
-                    player.Notify("Facture déchirée, fonds bancaire insufissant", $"{SecondPlayer.GetFullName()} vient de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
+                    player.Notify("Facture déchirée, fonds bancaire insufissant", $"{SecondPlayer.FullName} vient de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
                     SecondPlayer.Notify("Facture déchirée fonds bancaire insufissant", $"Vous venez de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
 
                 }
@@ -87,12 +87,12 @@ namespace BizBill.Functions
 
         public async void BizPanel_AcceptBill(Player player, Player SecondPlayer, float Price)
         {
-            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { BizId = player.biz.Id, CustomerName = SecondPlayer.GetFullName(), EmployeeName = player.GetFullName(), Date = DateUtils.GetCurrentTime(), Price = Price };
+            OrmManager.BizBill_LogsBill instance = new OrmManager.BizBill_LogsBill { BizId = player.biz.Id, CustomerName = SecondPlayer.FullName, EmployeeName = player.FullName, Date = DateUtils.GetCurrentTime(), Price = Price };
             var result = await instance.Save();
 
             if (result)
             {
-                player.Notify("Facture acceptée", $"{SecondPlayer.GetFullName()} vient de signer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
+                player.Notify("Facture acceptée", $"{SecondPlayer.FullName} vient de signer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
                 SecondPlayer.Notify("Facture acceptée", $"Vous venez de signer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
 
                 float taxPercentage = Main.Main._BizBillConfig.TaxPercentage;
@@ -130,7 +130,7 @@ namespace BizBill.Functions
 
         public void BizPanel_RefuseBill(Player player, Player SecondPlayer, float Price)
         {
-            player.Notify("Facture déchirée", $"{SecondPlayer.GetFullName()} vient de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
+            player.Notify("Facture déchirée", $"{SecondPlayer.FullName} vient de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
             SecondPlayer.Notify("Facture déchirée", $"Vous venez de déchirer la facture d'un montant de {Price}€", NotificationManager.Type.Success);
         }
 
