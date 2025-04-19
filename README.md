@@ -1,23 +1,40 @@
+![Logo BizBill](https://github.com/loicsmith/BizBill/blob/master/logo.jpg)
+
+
 # 📋 BizBill
 Plugin permettant de faire des factures - Nova-Life
 
-## fonctionnalités
--  Les entreprises ont désormais la possibilité de réaliser des factures à un particulier (Ouvrez AAMenu, catégorie métier, faire une facture)
--  Chaque facture est enregistré pour chaque entreprise, permettant de tenir une comptabilité (Ouvrez AAMenu, catégorie métier, Comptabilité)
--  L'argent des factures est distribué à l'entreprise, après déduction des taxes et frais bancaires
+---
+
+## Fonctionnalités
+- Création de factures par les entreprises à destination des particuliers (via AAMenu > Catégorie métier > Faire une facture).
+- Enregistrement systématique des factures pour chaque entreprise, facilitant la tenue de la comptabilité (via AAMenu > Catégorie métier > Comptabilité).
+- Distribution des paiements directement à l'entreprise, après déduction des taxes et frais bancaires.
+
+---
 
 ## Installation et configuration
-1. Télecharger la dernière version [ici](https://github.com/loicsmith/BizBill/releases/latest) ainsi que les dépendances requises (AAMenu & Modkit) [ici](https://github.com/Aarnow/NovaLife_ModKit-Releases/releases/latest)
-2. Placer le plugin ainsi que les dépendances dans le dossier "plugins" de votre serveur
-3. Redémarrer votre serveur, puis rendez-vous en jeu
-4. Ouvrez AAMenu, catégorie Administration, puis :
-   - Plugins > BizBill : modifier ici les valeurs nécessaires
-     
-## Rapport de bug
-- Rapporter [ici](https://github.com/loicsmith/BizBill/issues) en ouvrant un post tout bug concernant le plugin
+1. Téléchargez la dernière version :
+   - [BizBill](https://github.com/loicsmith/BizBill/releases/latest)
+   - [AAMenu & Modkit](https://github.com/Aarnow/NovaLife_ModKit-Releases/releases/latest) (dépendances nécessaires).
+2. Placez le plugin et les dépendances dans le dossier `plugins` de votre serveur.
+3. Redémarrez votre serveur et lancez le jeu.
+4. Configurez via AAMenu :
+   - **Administration > Plugins > BizBill** : Modifiez les paramètres nécessaires.
 
-## Des questions ?
-- Ouvrer un post de discussion [ici](https://github.com/loicsmith/BizBill/discussions) en cas de question
-  
+---
+
+## Rapport de bug
+En cas de problème, ouvrez un post pour signaler un bug :
+- [Signaler un bug](https://github.com/loicsmith/BizBill/issues)
+
+---
+
+## Questions
+Pour toute question ou discussion, ouvrez un sujet ici :
+- [Discuter](https://github.com/loicsmith/BizBill/discussions)
+
+---
+
 ## Licence
-- [Licence propriétaire](https://github.com/loicsmith/BizBill/blob/master/Licence.md)
+Ce plugin est sous [licence propriétaire](https://github.com/loicsmith/BizBill/blob/master/Licence.md).
