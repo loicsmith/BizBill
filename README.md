@@ -24,6 +24,12 @@ Plugin permettant de faire des factures - Nova-Life
 
 ---
 
+## Utilisation
+1. Ouvrez AAMenu (touche P par défaut)
+2. Rendez vous dans la catégorie "Métier", et sélectionner "Faire une facture" ou "Voir la comptabilité"
+
+---
+
 ## Rapport de bug
 En cas de problème, ouvrez un post pour signaler un bug :
 - [Signaler un bug](https://github.com/loicsmith/BizBill/issues)
