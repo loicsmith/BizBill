@@ -44,3 +44,5 @@ Pour toute question ou discussion, ouvrez un sujet ici :
 
 ## Licence
 Ce plugin est sous [licence propriétaire](https://github.com/loicsmith/BizBill/blob/master/Licence.md).
+
+NoAI: true
